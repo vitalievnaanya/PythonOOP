@@ -1,16 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from project.section import Section
+from project.task import Task
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+task = Task("Make bed", "27/05/2020")
+print(task.change_name("Go to University"))
+print(task.change_due_date("28.05.2020"))
+task.add_comment("Don't forget laptop")
+print(task.edit_comment(0, "Don't forget laptop and notebook"))
+print(task.details())
+section = Section("Daily tasks")
+print(section.add_task(task))
+second_task = Task("Make bed", "27/05/2020")
+section.add_task(second_task)
+print(section.clean_section())
+print(section.view_section())
